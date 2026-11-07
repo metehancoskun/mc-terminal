@@ -12,7 +12,7 @@ Claude Code oturumlarını tek ekrandan açan, yöneten ve izleyen hafif bir mac
 - **Özelleştirilebilir**: özelliklerin çoğu ayarlardan açılıp kapatılabilir.
 - **VS Code köprüsü**: projeyi VS Code'da aç, VS Code'daki Claude oturumlarını da gör.
 
-Ayrıntı: [özellikler](docs/OZELLIKLER.md) · [kararlar](docs/KARARLAR.md) · [yol haritası](docs/YOL-HARITASI.md) · [araştırma](docs/ARASTIRMA.md)
+Ayrıntı: [özellikler](docs/OZELLIKLER.md) · [kararlar](docs/KARARLAR.md) · [yol haritası](docs/YOL-HARITASI.md) · [araştırma](docs/ARASTIRMA.md) · [teknik](docs/TEKNIK.md)
 
 ## Teknoloji (planlanan)
 

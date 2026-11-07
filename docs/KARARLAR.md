@@ -22,6 +22,7 @@ Her karar: tarih, ne seçildi, neden. Bir karar değişirse eskisi silinmez, üs
 ## Açık sorular
 
 - v1 çekirdek: sekmeli terminal + split, Claude sohbet pencereleri, kalıcı oturum, proje listesi + VS Code köprüsü. Her biri ayrıntılı anlatılıp tek tek sorulacak.
-- Kalıcı oturum yöntemi: tmux (macOS'ta hazır gelmiyor), dahili `screen` 4.00 (24-bit rengi bozuyor) ya da kendi oturum sunucumuz.
+- Kalıcı oturum yöntemi: araştırmanın önerisi kendi Rust servisimiz ([TEKNIK.md](TEKNIK.md#2-kalıcı-oturum)); onay bekliyor.
+- Onay bekleme sinyali için Claude Code hook'ları kurulsun mu (kullanıcının ayarına eklenir, kapatılabilir)? ([TEKNIK.md](TEKNIK.md#3-claude-code-yerel-verisi-21319))
 - Arayüz soruları 2–8: ana yerleşim, yoğunluk, tema modu (koyu mod isteniyor), font, oturum kartı, dar pencerede davranış (responsive isteniyor), görsel harita.
 - v1 dışı önerisi (onay bekliyor): sosyal / XP, bulut senkronu, kendi modelini çalıştırma.
