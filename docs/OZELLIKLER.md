@@ -19,6 +19,7 @@ Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · *
 | Token, maliyet tahmini, bağlam doluluğu, 5 saatlik ve haftalık limit | v1 |
 | Alt ajanlar, araç çağrıları, dokunulan dosyalar | v1 |
 | Görsel harita: sütunlu akış (proje → oturum → araç + Kaynaklar) | v1 |
+| Grafikler (detay panelinde ve haritada; türleri Aşama 4'te örnekle seçilecek) | v1 |
 
 ## Claude'u verimli kullanma
 

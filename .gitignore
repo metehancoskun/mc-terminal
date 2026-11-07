@@ -4,3 +4,8 @@ dist/
 src-tauri/target/
 .DS_Store
 *.log
+dist-ssr/
+*.local
+src-tauri/gen/schemas/
+.vscode/*
+!.vscode/extensions.json
