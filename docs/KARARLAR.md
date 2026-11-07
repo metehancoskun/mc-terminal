@@ -31,11 +31,12 @@ Her karar: tarih, ne seçildi, neden. Bir karar değişirse eskisi silinmez, üs
 | K23 | Dar pencere | Kenar çubuğu simge şeridine küçülür | Terminal yerini korur |
 | K24 | Onay bildirimi | macOS bildirimi + menü çubuğu simgesinde bekleyen sayısı | Uygulama arkadayken de görülür |
 | K25 | Animasyon | Varsayılan tam; ayarlardan sade / kapalı; "azaltılmış hareket" açık Mac'te otomatik sade | Görsel deneyim öncelikli |
-| K26 | Görsel harita | Devre kartı temel; ek katman (skill, MCP vb.) ve daha kurumsal görünüm tartışılıyor | Sabit yerleşim, sinyal izi |
+| K26 | Görsel harita | Devre kartı temel; daha kurumsal ve kaliteli görünüm (HeroUI kartları, renk yalnız etkinlikte, modülde mini ölçüler, ipucu, filtre) | Sabit yerleşim, sinyal izi |
+| K27 | Haritada "Kaynaklar" sütunu | Skill'ler, MCP sunucuları, hook'lar, alt ajan tipleri; kullanılınca yanan modüller | Verimlilik bilgisi haritada görünür |
 
 ## Açık sorular
 
 - Kalıcı oturum yöntemi: araştırmanın önerisi kendi Rust servisimiz ([TEKNIK.md](TEKNIK.md#2-kalıcı-oturum)); onay bekliyor.
 - Onay bekleme sinyali için Claude Code hook'ları kurulsun mu (kullanıcının ayarına eklenir, kapatılabilir)? ([TEKNIK.md](TEKNIK.md#3-claude-code-yerel-verisi-21319))
-- Devre kartı haritasına hangi ek katmanlar girsin (skill, MCP, hook…) ve görünüm nasıl daha kurumsal olsun (K26).
+- K27'ye eklenecek başka kaynak var mı? Devre kartının yeni hali için canlı örnek hazırlanacak.
 - v1 dışı önerisi (onay bekliyor): sosyal / XP, bulut senkronu, kendi modelini çalıştırma.
