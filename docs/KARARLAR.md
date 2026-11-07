@@ -18,11 +18,24 @@ Her karar: tarih, ne seçildi, neden. Bir karar değişirse eskisi silinmez, üs
 | K10 | Genel ilke | Özellikler ayarlardan açılıp kapatılabilir, özelleştirilebilir | İstendi |
 | K11 | Ad | MC Terminal (repo: `mc-terminal`) | Seçildi; `mc` (Midnight Commander) ile karışma riski bilinerek |
 | K12 | Repo | GitHub, public, MIT lisansı | Seçildi |
+| K13 | Terminal | Sekmeler + bölünmüş paneller | iTerm / VS Code alışkanlığı |
+| K14 | Claude sohbetleri | Varsayılan ana pencerede sekme; sekme sürüklenince ayrı pencere olur | En esnek düzen |
+| K15 | Kalıcı oturum | Var, varsayılan açık (ayarlardan kapatılır) | Uygulama kapansa da Claude çalışmaya devam eder; yöntem açık soru |
+| K16 | Proje listesi | Sol kenar çubuğunda; projelerin altında oturumlar; "VS Code'da aç" | Hep görünür |
+| K17 | Ana yerleşim | Kenar çubuğu + ortada sekmeler + sağda detay paneli | IDE düzeni |
+| K18 | Yoğunluk | Kompakt (varsayılan; ayarlardan değişir) | Ekrana çok oturum sığar |
+| K19 | Tema modu | Sistemi takip eder; ayarlardan Koyu / Açık / Sistem | Koyu mod kesin, açık mod da olsun |
+| K20 | Arayüz fontu | Sistem fontu (SF Pro) | İndirme yok, en hafif, Mac'e yerli |
+| K21 | Terminal fontu | JetBrains Mono (varsayılan; ayarlardan değişir) | Okunaklı, uygulamayla gelir |
+| K22 | Oturum kartı | Listede orta kart (başlık, durum, bağlam çubuğu); ayrıntılar (token, maliyet, alt ajanlar, son araçlar) sağdaki detay panelinde | Liste sade, detay panelde tam bilgi |
+| K23 | Dar pencere | Kenar çubuğu simge şeridine küçülür | Terminal yerini korur |
+| K24 | Onay bildirimi | macOS bildirimi + menü çubuğu simgesinde bekleyen sayısı | Uygulama arkadayken de görülür |
+| K25 | Animasyon | Varsayılan tam; ayarlardan sade / kapalı; "azaltılmış hareket" açık Mac'te otomatik sade | Görsel deneyim öncelikli |
+| K26 | Görsel harita | Devre kartı temel; ek katman (skill, MCP vb.) ve daha kurumsal görünüm tartışılıyor | Sabit yerleşim, sinyal izi |
 
 ## Açık sorular
 
-- v1 çekirdek: sekmeli terminal + split, Claude sohbet pencereleri, kalıcı oturum, proje listesi + VS Code köprüsü. Her biri ayrıntılı anlatılıp tek tek sorulacak.
 - Kalıcı oturum yöntemi: araştırmanın önerisi kendi Rust servisimiz ([TEKNIK.md](TEKNIK.md#2-kalıcı-oturum)); onay bekliyor.
 - Onay bekleme sinyali için Claude Code hook'ları kurulsun mu (kullanıcının ayarına eklenir, kapatılabilir)? ([TEKNIK.md](TEKNIK.md#3-claude-code-yerel-verisi-21319))
-- Arayüz soruları 2–8: ana yerleşim, yoğunluk, tema modu (koyu mod isteniyor), font, oturum kartı, dar pencerede davranış (responsive isteniyor), görsel harita.
+- Devre kartı haritasına hangi ek katmanlar girsin (skill, MCP, hook…) ve görünüm nasıl daha kurumsal olsun (K26).
 - v1 dışı önerisi (onay bekliyor): sosyal / XP, bulut senkronu, kendi modelini çalıştırma.

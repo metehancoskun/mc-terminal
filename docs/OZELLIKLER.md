@@ -6,19 +6,19 @@ Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · *
 
 | Özellik | Durum |
 |---------|-------|
-| Sekmeli terminal + bölünmüş paneller | açık |
-| Claude sohbet pencereleri (her sohbet kendi sekmesi / penceresi) | açık |
-| Kalıcı oturum (uygulama kapansa da Claude çalışır, açılınca geri bağlanır) | açık |
-| Proje listesi + "VS Code'da aç" | açık |
+| Sekmeli terminal + bölünmüş paneller | v1 |
+| Claude sohbetleri: sekme, sürüklenince ayrı pencere | v1 |
+| Kalıcı oturum (uygulama kapansa da Claude çalışır, açılınca geri bağlanır; varsayılan açık) | v1 |
+| Proje listesi (sol kenar çubuğu) + "VS Code'da aç" | v1 |
 
 ## İzleme
 
 | Özellik | Durum |
 |---------|-------|
-| Canlı oturum durumu (çalışıyor / bekliyor / onay istiyor) + macOS bildirimi | v1 |
+| Canlı oturum durumu (çalışıyor / bekliyor / onay istiyor) + macOS bildirimi + menü çubuğu sayacı | v1 |
 | Token, maliyet tahmini, bağlam doluluğu, 5 saatlik ve haftalık limit | v1 |
 | Alt ajanlar, araç çağrıları, dokunulan dosyalar | v1 |
-| Görsel harita (3 boyutlu değil) | açık |
+| Görsel harita: devre kartı (ek katmanlar tartışılıyor) | v1 |
 
 ## Claude'u verimli kullanma
 
