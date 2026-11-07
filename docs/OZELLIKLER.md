@@ -18,7 +18,7 @@ Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · *
 | Canlı oturum durumu (çalışıyor / bekliyor / onay istiyor) + macOS bildirimi + menü çubuğu sayacı | v1 |
 | Token, maliyet tahmini, bağlam doluluğu, 5 saatlik ve haftalık limit | v1 |
 | Alt ajanlar, araç çağrıları, dokunulan dosyalar | v1 |
-| Görsel harita: devre kartı (ek katmanlar tartışılıyor) | v1 |
+| Görsel harita: sütunlu akış (proje → oturum → araç + Kaynaklar) | v1 |
 
 ## Claude'u verimli kullanma
 
@@ -33,10 +33,11 @@ Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · *
 
 | Özellik | Durum |
 |---------|-------|
-| Git paneli (değişiklikler, diff, commit) | açık |
-| Worktree ile paralel ajan | açık |
-| Komut paleti (Cmd+K) | açık |
-| Klavye kısayolları (varsayılan set; ne kadar özelleştirilebilir olacağı açık) | v1 |
+| Git paneli: değişiklikler + diff, salt okunur (commit yok) | v1 |
+| Yeni oturumu ayrı worktree'de açma | v1 |
+| Paralel görev panosu (aynı görev birkaç worktree'de) | sonra |
+| Komut paleti (Cmd+K): gezinme + Claude eylemleri | v1 |
+| Klavye kısayolları: varsayılan set, değiştirilebilir, çakışma uyarısı | v1 |
 | Codex, Gemini ve diğer AI araçları | sonra |
 | Windows sürümü | sonra |
 | Sosyal / XP / leaderboard | yok |

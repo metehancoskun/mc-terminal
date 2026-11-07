@@ -39,9 +39,12 @@ Her karar: tarih, ne seçildi, neden. Bir karar değişirse eskisi silinmez, üs
 | K31 | Yol haritası | 6 aşamalı taslak kabul; ayrıntı ve sıra yapım sırasında netleşir | Onaylandı |
 | K32 | Kurulum | Yapıma geçince Xcode Command Line Tools ve Rust (rustup) kurulur | Onaylandı |
 | K33 | Görsel dil | Oyun havası yok: iş uygulaması gibi sade ve ciddi. Neon, parlama, parçacık, yanıp sönen LED, XP/rozet yok. Animasyon (K25) yalnız bilgi taşır: yumuşak geçiş, ince akış çizgisi, sayaç | Atalay's Terminal'deki oyunsu hava istenmiyor |
+| K34 | Görsel harita biçimi | A1 Sütunlu akış: proje → oturum → araç sütunları ince çizgiyle bağlı, Kaynaklar sağda modül, kullanılınca açık mavi; oturum üstüne gelince bağlantılar vurgulanır; filtre çipleri. Yapımda daha etkili ve görsel hale getirilecek ama göz yormadan | Örnek sayfasından seçildi; K26 ve K33'e uygun |
+| K35 | Git paneli | Detay panelinde "Değişiklikler" sekmesi, salt okunur: değişen dosyalar, satır sayıları, diff, "VS Code'da aç". Commit yok | Hafif, yanlışlıkla commit riski yok |
+| K36 | Worktree | Yeni oturum açarken "Ayrı worktree'de aç" anahtarı; dal ve klasörü uygulama oluşturur; worktree'ler kenar çubuğunda proje altında dal adıyla; "Birleştir" / "Sil" | Paralel çalışma güvenli; paralel görev panosu yok |
+| K37 | Komut paleti | Cmd+K: gezinme (oturum, proje, dosya, ayar, uygulama komutları) + Claude eylemleri (seçili oturuma slash komutu, skill başlat, bekleyen onaya git, bilgi bankasında ara) | Verimlilik modülüyle aynı yerde |
+| K38 | Klavye kısayolları | Varsayılan set + her kısayol değiştirilebilir, çakışma uyarısı, "Varsayılana dön", kendi komutunu kısayola bağlama. Hazır iTerm / VS Code profilleri yok | K10'a uygun |
 
 ## Açık sorular
 
-- Devre kartının yeni hali: birkaç seçenek hazırlanıp seçilecek.
-- Git paneli, worktree ile paralel ajan, komut paleti (Cmd+K): ayrıntılı örnekle sorulacak.
-- Klavye kısayolları: var (v1); ne kadar özelleştirilebilir olacağı (sabit / değiştirilebilir / hazır profiller) sorulacak.
+Yok. Kararlar tamam; yapım aşamasına geçildi (2026-11-07).

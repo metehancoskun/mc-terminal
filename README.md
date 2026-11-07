@@ -2,7 +2,7 @@
 
 Claude Code oturumlarını tek ekrandan açan, yöneten ve izleyen hafif bir macOS masaüstü uygulaması.
 
-> **Durum:** planlama aşaması. Henüz kod yok; kararlar [`docs/`](docs/) altında tutuluyor.
+> **Durum:** kararlar tamam, yapım başlıyor. Kararlar [`docs/`](docs/) altında tutuluyor.
 
 ## Ne olacak
 
