@@ -7,6 +7,16 @@ import { currentMode, onModeChange, terminalThemes } from "./theme";
 
 export type RendererInfo = "webgl" | "dom";
 
+// WKWebView'de xterm WebGL titreme yapabiliyor; varsayılan DOM çizimi.
+// Denemek için geliştirici konsolunda: localStorage.setItem("mc.webgl", "1") ve yeniden yükle.
+const useWebgl = (() => {
+  try {
+    return localStorage.getItem("mc.webgl") === "1";
+  } catch {
+    return false;
+  }
+})();
+
 type Props = {
   active: boolean;
   onTitle: (title: string) => void;
@@ -52,7 +62,11 @@ export default function TerminalPane({ active, onTitle, onExit, onRenderer }: Pr
       t.write(chunk instanceof ArrayBuffer ? new Uint8Array(chunk) : Uint8Array.from(chunk));
     };
     const onExitCh = new Channel<number>();
-    onExitCh.onmessage = () => cb.current.onExit();
+    // Kabuğu biz kapattıysak (sekme kapandı / bileşen söküldü) sekmeyi tekrar kapatma.
+    // Aksi halde StrictMode'un çift bağlaması sonsuz aç-kapa döngüsü yaratır.
+    onExitCh.onmessage = () => {
+      if (!disposed) cb.current.onExit();
+    };
 
     invoke<number>("pty_spawn", { cols: t.cols, rows: t.rows, cwd: null, onData, onExit: onExitCh })
       .then((pid) => {
@@ -62,7 +76,10 @@ export default function TerminalPane({ active, onTitle, onExit, onRenderer }: Pr
         }
         id = pid;
       })
-      .catch((e) => t.write(`\r\n\x1b[31mKabuk açılamadı: ${e}\x1b[0m\r\n`));
+      .catch((e) => {
+        console.warn("[mc] pty_spawn hatası:", String(e));
+        t.write(`\r\n\x1b[31mKabuk açılamadı: ${e}\x1b[0m\r\n`);
+      });
 
     // Yazma sırası korunsun diye kuyruk.
     const dataSub = t.onData((d) => {
@@ -75,10 +92,27 @@ export default function TerminalPane({ active, onTitle, onExit, onRenderer }: Pr
     });
     const titleSub = t.onTitleChange((title) => cb.current.onTitle(title));
 
+    // Boyut değişince en fazla kare başına bir kez ve yalnız ölçü gerçekten değiştiyse sığdır
+    // (aksi halde fit → yeniden boyut → fit döngüsü titremeye yol açabilir).
+    let raf = 0;
     const ro = new ResizeObserver(() => {
-      if (host.current && host.current.offsetParent !== null) f.fit();
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const el = host.current;
+        if (!el || el.offsetParent === null || el.clientWidth === 0 || el.clientHeight === 0) return;
+        const d = f.proposeDimensions();
+        if (d && (d.cols !== t.cols || d.rows !== t.rows)) f.fit();
+      });
     });
     ro.observe(host.current!);
+
+    // Tanı: saniyede 5'ten fazla yeniden boyutlanma döngü demektir; dev log'a düşer.
+    let resizes = 0;
+    const diag = setInterval(() => {
+      if (resizes > 5) console.warn(`[mc] boyut döngüsü: ${resizes}/sn (${t.cols}x${t.rows})`);
+      resizes = 0;
+    }, 1000);
+    const diagSub = t.onResize(() => resizes++);
 
     const offMode = onModeChange((m) => {
       t.options.theme = terminalThemes[m];
@@ -86,6 +120,9 @@ export default function TerminalPane({ active, onTitle, onExit, onRenderer }: Pr
 
     return () => {
       disposed = true;
+      cancelAnimationFrame(raf);
+      clearInterval(diag);
+      diagSub.dispose();
       ro.disconnect();
       offMode();
       dataSub.dispose();
@@ -103,7 +140,9 @@ export default function TerminalPane({ active, onTitle, onExit, onRenderer }: Pr
     const t = term.current;
     if (!t) return;
     if (active) {
-      if (!webgl.current) {
+      if (!useWebgl) {
+        cb.current.onRenderer("dom");
+      } else if (!webgl.current) {
         try {
           const w = new WebglAddon();
           w.onContextLoss(() => {

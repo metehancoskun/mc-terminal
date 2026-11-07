@@ -95,7 +95,7 @@ export default function App() {
             +
           </Button>
         </div>
-        <div className="relative min-h-0 flex-1 bg-surface">
+        <div className="relative min-h-0 flex-1 overflow-hidden bg-surface pl-2.5 pt-2">
           {tabs.map((t) => (
             <TerminalPane
               key={t.id}

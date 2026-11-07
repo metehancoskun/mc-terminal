@@ -63,14 +63,19 @@ pub fn pty_spawn(
     let mut reader = pair.master.try_clone_reader().map_err(|e| e.to_string())?;
     let writer = pair.master.take_writer().map_err(|e| e.to_string())?;
     let id = state.next.fetch_add(1, Ordering::Relaxed) + 1;
+    eprintln!("[pty {id}] başladı: {shell} -l ({cols}x{rows})");
 
     thread::spawn(move || {
         let mut buf = vec![0u8; 64 * 1024];
+        let mut total = 0usize;
         loop {
             match reader.read(&mut buf) {
-                Ok(0) | Err(_) => break,
+                Ok(0) => { eprintln!("[pty {id}] EOF, toplam {total} bayt"); break }
+                Err(e) => { eprintln!("[pty {id}] okuma hatası: {e}, toplam {total} bayt"); break }
                 Ok(n) => {
-                    if on_data.send(Response::new(buf[..n].to_vec())).is_err() {
+                    total += n;
+                    if let Err(e) = on_data.send(Response::new(buf[..n].to_vec())) {
+                        eprintln!("[pty {id}] kanal hatası: {e}");
                         break;
                     }
                 }
@@ -105,6 +110,7 @@ pub fn pty_resize(state: State<'_, Ptys>, id: u32, cols: u16, rows: u16) -> Resu
 #[tauri::command]
 pub fn pty_kill(state: State<'_, Ptys>, id: u32) -> Result<(), String> {
     // Session düşerken Drop kabuğu sonlandırır.
+    eprintln!("[pty {id}] kapatıldı (arayüz istedi)");
     state.map.lock().map_err(|e| e.to_string())?.remove(&id);
     Ok(())
 }

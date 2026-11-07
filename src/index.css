@@ -19,7 +19,9 @@ body {
   user-select: none;
 }
 
-.xterm {
-  padding: 8px 0 0 10px;
-  height: 100%;
+/* WebKit: user-select:none olan ebeveyn, xterm'in gizli textarea'sına yazmayı bozabiliyor. */
+.xterm,
+.xterm * {
+  -webkit-user-select: text;
+  user-select: text;
 }
