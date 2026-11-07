@@ -1,6 +1,6 @@
 # Özellikler
 
-Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · **sonra** = v1 dışı · **önerilen dışı** = v1 dışı önerildi, onay bekliyor.
+Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · **sonra** = v1 dışı · **yok** = yapılmayacak.
 
 ## Çekirdek
 
@@ -36,10 +36,11 @@ Durum: **v1** = ilk sürüme girecek · **açık** = henüz karar verilmedi · *
 | Git paneli (değişiklikler, diff, commit) | açık |
 | Worktree ile paralel ajan | açık |
 | Komut paleti (Cmd+K) | açık |
+| Klavye kısayolları (varsayılan set; ne kadar özelleştirilebilir olacağı açık) | v1 |
 | Codex, Gemini ve diğer AI araçları | sonra |
 | Windows sürümü | sonra |
-| Sosyal / XP / leaderboard | önerilen dışı |
-| Bulut senkronu | önerilen dışı |
-| Kendi modelini çalıştırma | önerilen dışı |
+| Sosyal / XP / leaderboard | yok |
+| Bulut senkronu | yok |
+| Kendi modelini çalıştırma | yok |
 
 Her özellik ayarlardan açılıp kapatılabilecek (K10).

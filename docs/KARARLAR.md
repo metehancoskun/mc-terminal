@@ -32,11 +32,16 @@ Her karar: tarih, ne seçildi, neden. Bir karar değişirse eskisi silinmez, üs
 | K24 | Onay bildirimi | macOS bildirimi + menü çubuğu simgesinde bekleyen sayısı | Uygulama arkadayken de görülür |
 | K25 | Animasyon | Varsayılan tam; ayarlardan sade / kapalı; "azaltılmış hareket" açık Mac'te otomatik sade | Görsel deneyim öncelikli |
 | K26 | Görsel harita | Devre kartı temel; daha kurumsal ve kaliteli görünüm (HeroUI kartları, renk yalnız etkinlikte, modülde mini ölçüler, ipucu, filtre) | Sabit yerleşim, sinyal izi |
-| K27 | Haritada "Kaynaklar" sütunu | Skill'ler, MCP sunucuları, hook'lar, alt ajan tipleri; kullanılınca yanan modüller | Verimlilik bilgisi haritada görünür |
+| K27 | Haritada "Kaynaklar" sütunu | Skill'ler, MCP sunucuları, hook'lar, alt ajan tipleri, slash komutları, plugin'ler, `CLAUDE.md` / bellek dosyaları, kullanılan model; kullanılınca yanan modüller, türe göre gruplu ve filtrelenebilir | Verimlilik bilgisi haritada görünür; "aklıma gelmeyen ne varsa eklensin" |
+| K28 | Kalıcı oturum yöntemi | Kendi Rust servisi: PTY'leri ayrı bir arka plan süreci tutar, uygulama Unix soketle bağlanır; yedek yol `claude --resume` | tmux kurulu değil, macOS `screen` 24-bit rengi bozuyor ([TEKNIK.md](TEKNIK.md#2-kalıcı-oturum)) |
+| K29 | Claude Code hook'ları | Kurulur: onay bekleme sinyali için. Kullanıcının mevcut ayarına eklenir, üzerine yazılmaz; ayarlardan kapatılır | Onay isteği anında yakalanır |
+| K30 | v1 dışı | Sosyal / XP / leaderboard, bulut senkronu, kendi modelini çalıştırma: yapılmayacak | Gerek yok |
+| K31 | Yol haritası | 6 aşamalı taslak kabul; ayrıntı ve sıra yapım sırasında netleşir | Onaylandı |
+| K32 | Kurulum | Yapıma geçince Xcode Command Line Tools ve Rust (rustup) kurulur | Onaylandı |
+| K33 | Görsel dil | Oyun havası yok: iş uygulaması gibi sade ve ciddi. Neon, parlama, parçacık, yanıp sönen LED, XP/rozet yok. Animasyon (K25) yalnız bilgi taşır: yumuşak geçiş, ince akış çizgisi, sayaç | Atalay's Terminal'deki oyunsu hava istenmiyor |
 
 ## Açık sorular
 
-- Kalıcı oturum yöntemi: araştırmanın önerisi kendi Rust servisimiz ([TEKNIK.md](TEKNIK.md#2-kalıcı-oturum)); onay bekliyor.
-- Onay bekleme sinyali için Claude Code hook'ları kurulsun mu (kullanıcının ayarına eklenir, kapatılabilir)? ([TEKNIK.md](TEKNIK.md#3-claude-code-yerel-verisi-21319))
-- K27'ye eklenecek başka kaynak var mı? Devre kartının yeni hali için canlı örnek hazırlanacak.
-- v1 dışı önerisi (onay bekliyor): sosyal / XP, bulut senkronu, kendi modelini çalıştırma.
+- Devre kartının yeni hali: birkaç seçenek hazırlanıp seçilecek.
+- Git paneli, worktree ile paralel ajan, komut paleti (Cmd+K): ayrıntılı örnekle sorulacak.
+- Klavye kısayolları: var (v1); ne kadar özelleştirilebilir olacağı (sabit / değiştirilebilir / hazır profiller) sorulacak.
