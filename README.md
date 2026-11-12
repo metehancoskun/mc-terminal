@@ -24,4 +24,4 @@ Claude Code dosyaları (`~/.claude`) yalnızca okunur.
 
 ## Lisans
 
-[MIT](LICENSE) · Anthropic ile bağlantılı değildir; "Claude" Anthropic'in markasıdır.
+[MIT](LICENSE) · 
